@@ -34,6 +34,61 @@ Os valores inseridos em **euros (€)** são automaticamente convertidos para **
 │   ├── ...
 │   └── img-14.jpg
 ├── index.html
-├── styles.css
-├── geral.js   # Função gerarPDF()
+├── script.js   # Função gerarPDF()
 └── README.md
+⚙️ Como Usar
+Instale o jsPDF no seu projeto:
+
+html
+Copiar código
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+Certifique-se de que você possui:
+
+Os inputs/elementos com os IDs:
+
+html
+Copiar código
+<input id="honorario" type="number" value="800">
+<input id="taxa" type="number" value="175">
+As imagens de fundo em /assets/img-1.jpg até /assets/img-14.jpg.
+
+Implemente a função obterCotacaoEuro() para buscar a cotação atual (exemplo usando uma API):
+
+js
+Copiar código
+async function obterCotacaoEuro() {
+  try {
+    const res = await fetch("https://api.exchangerate.host/latest?base=EUR&symbols=BRL");
+    const data = await res.json();
+    return data.rates.BRL;
+  } catch (err) {
+    console.error("Erro ao obter cotação:", err);
+    return null;
+  }
+}
+Chame a função gerarPDF() no seu frontend:
+
+html
+Copiar código
+<button onclick="gerarPDF()">Gerar PDF</button>
+📊 Exemplo de Saída
+Cotação do euro atual: R$ 6,34
+
+Honorários: €800 → R$ 5.072,00
+
+Taxa: €175 → R$ 1.109,50
+
+Total: €975 → R$ 6.181,50
+
+📥 Download Automático
+Ao clicar no botão Gerar PDF, o arquivo Apresentação-Reunião.pdf será automaticamente baixado no navegador.
+
+📌 Observações
+A cotação é sempre buscada no momento da geração do PDF.
+
+Os valores exibidos podem variar de acordo com a cotação do euro.
+
+As imagens devem estar na pasta /assets com os nomes img-1.jpg até img-14.jpg.
+
+📄 Licença
+Este projeto é de uso privado e voltado para propostas comerciais.
