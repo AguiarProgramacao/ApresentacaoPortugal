@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+
+  <title>Apresentação Portugal</title>
+</head>
+
+<body>
+  <div class="container">
+    <div class="container-reuniao">
+      <h1>Apresentação para reunião</h1>
+      <p>
+        Ao clicar no botão de gerar PDF, será feito o download da apresentação da reunião, todos os valores estão sendo
+        multiplicado pelo valor do euro atual. Se algum valor tiver centavos, coloque ponto em vez de vírgula.
+      </p>
+      <p id="euroAtual"></p>
+    </div>
+    <hr>
+    <div class="container-familia">
+      <form>
+        <fieldset>
+          <legend>Valores da apresentação</legend>
+          <label>Valor do Honorário:</label>
+          <input type="number" name="honorario" id="honorario" placeholder="Ex: 2500 ou 2500.50" required>
+          <label>Valor da Taxa:</label>
+          <input type="number" id="taxa" placeholder="Ex: 100 ou 150.50" required>
+        </fieldset>
+      </form>
+      <div class="button-container">
+        <button class="btn btn-familia" onclick="gerarPDF()">Gerar PDF</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="geral.js"></script>
+</body>
+
+</html>

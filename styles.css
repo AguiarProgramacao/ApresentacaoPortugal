@@ -1,0 +1,125 @@
+body{
+  margin: 0;
+  padding: 8% 4%;
+  box-sizing: border-box;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Space-Grotesk", sans-serif;
+  background-image: url("./assets/Slice-1-desk.webp");
+  background-position-x: -330px;
+  background-position-y: -100px;
+}
+
+.container{
+  max-width: 1200px;
+  background-color: #F8F8F8;
+  padding: 2% 3%;
+  border: none;
+  border-top: 2px solid darkgreen;
+  border-radius: 12px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.container-reuniao{
+  width: 45%;
+}
+
+.container-familia{
+  width: 45%;
+}
+
+fieldset{
+  display: flex;
+  flex-direction: column;
+  border-radius: 8px;
+  padding: 15px;
+
+  & legend{
+    font-size: 24px;
+  }
+
+  & label{
+    font-weight: 500;
+  }
+
+  & input{
+    border-radius: 6px;
+    border: 1px solid #CCC;
+    padding: 6px;
+    margin-bottom: 15px;
+  }
+
+  & select{
+    border-radius: 6px;
+    border: 1px solid #CCC;
+    padding: 6px;
+    margin-bottom: 15px;
+  }
+}
+
+button{
+  padding: 12px 100px;
+  background-color: #2B612D;
+  border: none;
+  border-radius: 8px;
+  color: #FFF;
+}
+
+button:hover{
+  border: 1px solid #1d1d1e;
+  cursor: pointer;
+  transform: translateY(-10px);
+  transition: all 0.6s;
+}
+
+p{
+  max-width: 450px;
+}
+
+.button-container{
+  display: flex;
+  justify-content: end;
+}
+
+.btn-familia{
+  width: 50%;
+  padding: 12px 0;
+  margin-top: 15px;
+}
+
+h1{
+  font-size: 30px;
+}
+
+#euroAtual{
+  font-weight: bold;
+  font-size: 24px;
+}
+
+@media(max-width: 768px){
+  body{
+    height: 100%;
+  }
+  .container{
+    flex-direction: column;
+  }
+  .container-reuniao{
+    width: 100%;
+  }
+  .container-familia{
+    width: 100%;
+  }
+  hr{
+    width: 100%;
+    margin-top: 35px;
+  }
+}
+
+.sanfona {
+  display: none;
+  margin-left: 20px;
+  margin-top: 8px;
+}
